@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="card">
+    <view class="title">我的</view>
+
+    <view class="row">
+      <view class="label">用户名</view>
+      <view class="value">{{user.username}}</view>
+    </view>
+
+    <view class="row">
+      <view class="label">昵称</view>
+      <view class="value">{{user.displayName}}</view>
+    </view>
+
+    <view class="row">
+      <view class="label">头像</view>
+      <image class="avatar" mode="aspectFill" src="{{user.avatarUrl}}" wx:if="{{user.avatarUrl}}" />
+      <view class="avatar placeholder" wx:else></view>
+    </view>
+
+    <button class="btn secondary" bindtap="goMeals">菜品管理</button>
+    <button class="btn secondary" bindtap="goSettings">用户设置</button>
+    <button class="btn" bindtap="logout">退出登录</button>
+  </view>
+</view>

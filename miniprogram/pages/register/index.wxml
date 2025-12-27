@@ -1,0 +1,10 @@
+<view class="page">
+  <view class="card">
+    <view class="title">注册</view>
+
+    <input class="input" placeholder="用户名" value="{{username}}" bindinput="onInputUsername" />
+    <input class="input" placeholder="密码" password value="{{password}}" bindinput="onInputPassword" />
+
+    <button class="btn" loading="{{loading}}" bindtap="onSubmit">注册</button>
+  </view>
+</view>

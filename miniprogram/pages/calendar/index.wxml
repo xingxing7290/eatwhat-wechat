@@ -1,0 +1,55 @@
+<view class="page">
+  <view class="topCard">
+    <view class="monthbar">
+      <button class="nav" bindtap="prevMonth">上月</button>
+      <view class="title">{{year}}-{{month}}</view>
+      <button class="nav" bindtap="nextMonth">下月</button>
+    </view>
+    <view class="actions">
+      <button class="actionBtn ghost" bindtap="goMeals">菜品</button>
+      <button class="actionBtn primary" bindtap="goMe">我的</button>
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <view wx:else>
+    <view class="dayList">
+      <view id="day-{{item.date}}" class="dayCard {{item.todayClass}}" wx:for="{{days}}" wx:key="key">
+        <view class="dayHeader">
+          <view class="dayNum">{{item.day}}</view>
+          <view class="dateText">{{item.displayDateText}}</view>
+        </view>
+
+        <view class="mealRows">
+          <view
+            class="mealRow"
+            wx:for="{{item.mealGroups}}"
+            wx:key="key"
+            wx:for-item="group"
+            data-date="{{item.date}}"
+            data-meal-type="{{group.key}}"
+            bindtap="onTapMealGroup"
+            hover-class="rowHover"
+          >
+            <view class="mealLabel">{{group.label}}</view>
+
+            <view class="mealMain">
+              <view wx:if="{{group.items.length}}" class="mealContent">
+                <view class="mealItem" wx:for="{{group.items}}" wx:key="key" wx:for-item="mi">
+                  <image class="avatar" mode="aspectFill" src="{{mi.avatarUrl}}" wx:if="{{mi.avatarUrl}}" />
+                  <view class="avatar placeholder" wx:elif="{{mi.avatarText}}">{{mi.avatarText}}</view>
+                  <view class="avatar dot" wx:else></view>
+                  <view class="mealName">{{mi.mealName}}</view>
+                </view>
+                <view class="more" wx:if="{{group.moreCount}}">+{{group.moreCount}}</view>
+              </view>
+
+              <view wx:else class="add">添加</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="topCard">
+    <view class="bar">
+      <input class="search" placeholder="搜索菜品" value="{{keyword}}" bindinput="onInputKeyword" confirm-type="search" bindconfirm="onSearch" />
+      <button class="btn" bindtap="onSearch" loading="{{loading}}">搜索</button>
+    </view>
+
+    <view class="actions">
+      <button class="create" bindtap="goCreate">新增菜品</button>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="item" wx:for="{{meals}}" wx:key="_id" data-id="{{item._id}}" bindtap="goDetail">
+      <image class="img" mode="aspectFill" src="{{item.imageUrl}}" wx:if="{{item.imageUrl}}" />
+      <view class="img placeholder" wx:else></view>
+      <view class="main">
+        <view class="name">{{item.name}}</view>
+        <view class="meta" wx:if="{{item.category || item.subcategory}}">{{item.category}} {{item.subcategory}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="card">
+    <view class="title">用户设置</view>
+
+    <view class="row">
+      <view class="label">头像</view>
+      <view class="right" bindtap="chooseAndUploadAvatar">
+        <image class="avatar" mode="aspectFill" src="{{user.avatarUrl}}" wx:if="{{user && user.avatarUrl}}" />
+        <view class="avatar placeholder" wx:else></view>
+        <view class="action">更换</view>
+      </view>
+    </view>
+
+    <view class="row column">
+      <view class="label">昵称</view>
+      <input class="input" placeholder="请输入昵称" value="{{displayName}}" bindinput="onInputDisplayName" />
+      <button class="btn" loading="{{loading}}" bindtap="saveDisplayName">保存昵称</button>
+    </view>
+  </view>
+</view>

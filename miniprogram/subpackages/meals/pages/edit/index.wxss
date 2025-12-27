@@ -1,0 +1,86 @@
+.page {
+  padding: 24rpx;
+  background: #f6f6f6;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  box-sizing: border-box;
+  box-shadow: 0 10rpx 26rpx rgba(17, 24, 39, 0.08);
+}
+
+.row {
+  margin-bottom: 20rpx;
+}
+
+.label {
+  font-size: 24rpx;
+  color: #6b7280;
+  margin-bottom: 8rpx;
+}
+
+.input {
+  height: 80rpx;
+  border: none;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  background: #f3f4f6;
+  box-sizing: border-box;
+}
+
+.textarea {
+  min-height: 160rpx;
+  border: none;
+  border-radius: 12rpx;
+  padding: 16rpx 20rpx;
+  background: #f3f4f6;
+  box-sizing: border-box;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.imgrow {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.preview {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 12rpx;
+  background: #e5e7eb;
+}
+
+.placeholder {
+  background: #d1d5db;
+}
+
+.pick {
+  height: 72rpx;
+  border-radius: 12rpx;
+  background: #f3f4f6;
+  color: #111827;
+  border: none;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.save {
+  margin-top: 16rpx;
+  height: 88rpx;
+  border-radius: 12rpx;
+  background: #111827;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}

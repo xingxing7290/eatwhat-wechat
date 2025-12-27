@@ -1,0 +1,47 @@
+<view class="page">
+  <view class="topCard">
+    <view class="header">
+      <view class="date">{{date}}</view>
+      <view class="type">{{mealTypeLabel}}</view>
+    </view>
+
+    <view class="topActions">
+      <button class="topBtn" wx:if="{{!isAllMode}}" bindtap="showAllMeals">添加菜品</button>
+      <button class="topBtn" wx:else bindtap="showSelectedOnly">只看已选</button>
+    </view>
+
+    <input class="search" wx:if="{{isAllMode}}" placeholder="搜索菜品" value="{{keyword}}" bindinput="onInputKeyword" />
+  </view>
+
+  <checkbox-group bindchange="onChangeCheckbox">
+    <view class="list" wx:if="{{!isAllMode}}">
+      <view class="empty" wx:if="{{!selectedMeals.length}}">暂无已选，点击上方“添加菜品”</view>
+      <label class="item" wx:for="{{selectedMeals}}" wx:key="_id" wx:for-item="item">
+        <view class="left">
+          <checkbox value="{{item._id}}" checked="{{item._checked}}" />
+        </view>
+        <view class="main">
+          <view class="name">{{item.name}}</view>
+          <view class="meta" wx:if="{{item.category || item.subcategory}}">{{item.category}} {{item.subcategory}}</view>
+        </view>
+      </label>
+    </view>
+
+    <view class="list" wx:else>
+      <label class="item" wx:for="{{filteredMeals}}" wx:key="_id" wx:for-item="item">
+        <view class="left">
+          <checkbox value="{{item._id}}" checked="{{item._checked}}" />
+        </view>
+        <view class="main">
+          <view class="name">{{item.name}}</view>
+          <view class="meta" wx:if="{{item.category || item.subcategory}}">{{item.category}} {{item.subcategory}}</view>
+        </view>
+      </label>
+    </view>
+  </checkbox-group>
+
+  <view class="actions">
+    <button class="btn ghost" bindtap="onClear" disabled="{{saving}}">清空</button>
+    <button class="btn" bindtap="onSave" loading="{{saving}}">保存</button>
+  </view>
+</view>

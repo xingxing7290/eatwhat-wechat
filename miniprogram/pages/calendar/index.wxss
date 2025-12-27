@@ -1,0 +1,199 @@
+.page {
+  padding: 24rpx;
+  background: #f6f6f6;
+}
+
+.topCard {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 16rpx;
+  box-shadow: 0 10rpx 26rpx rgba(17, 24, 39, 0.08);
+  margin-bottom: 16rpx;
+}
+
+.monthbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12rpx;
+}
+
+.title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #111827;
+}
+
+.nav {
+  height: 56rpx;
+  border-radius: 999rpx;
+  padding: 0 22rpx;
+  background: #f3f4f6;
+  color: #111827;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-top: 12rpx;
+}
+
+.actionBtn {
+  flex: 1;
+  height: 72rpx;
+  border-radius: 14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.ghost {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.primary {
+  background: #111827;
+  color: #fff;
+}
+
+.loading {
+  color: #666;
+  padding: 24rpx 0;
+}
+
+.dayList {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.dayCard {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 16rpx;
+  box-shadow: 0 8rpx 20rpx rgba(17, 24, 39, 0.06);
+}
+
+.today {
+  border: 2rpx solid rgba(17, 24, 39, 0.18);
+  background: #fafafa;
+}
+
+.dayHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid #f3f4f6;
+}
+
+.dayNum {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #111827;
+}
+
+.dateText {
+  font-size: 22rpx;
+  color: #6b7280;
+}
+
+.mealRows {
+  margin-top: 8rpx;
+}
+
+.mealRow {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  padding: 14rpx 8rpx;
+  border-radius: 14rpx;
+}
+
+.mealRow + .mealRow {
+  border-top: 2rpx solid #f3f4f6;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.rowHover {
+  background: #f3f4f6;
+}
+
+.mealLabel {
+  width: 36rpx;
+  color: #6b7280;
+  font-size: 24rpx;
+  flex-shrink: 0;
+}
+
+.mealMain {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.mealContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  min-width: 0;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.mealItem {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  min-width: 0;
+  max-width: 44%;
+}
+
+.avatar {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 999rpx;
+  background: #e5e7eb;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18rpx;
+  color: #374151;
+}
+
+.dot {
+  background: #d1d5db;
+}
+
+.mealName {
+  flex: 1;
+  font-size: 26rpx;
+  color: #111827;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.more {
+  font-size: 22rpx;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.add {
+  flex: 1;
+  font-size: 26rpx;
+  color: #9ca3af;
+}

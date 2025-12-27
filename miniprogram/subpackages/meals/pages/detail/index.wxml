@@ -1,0 +1,37 @@
+<view class="page">
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <view wx:else>
+    <view class="card" wx:if="{{meal}}">
+      <image class="cover" mode="aspectFill" src="{{meal.imageUrl}}" wx:if="{{meal.imageUrl}}" />
+      <view class="cover placeholder" wx:else></view>
+
+      <view class="name">{{meal.name}}</view>
+      <view class="meta" wx:if="{{meal.category || meal.subcategory}}">{{meal.category}} {{meal.subcategory}}</view>
+
+      <view class="desc" wx:if="{{meal.description}}">{{meal.description}}</view>
+
+      <view class="section" wx:if="{{meal.tags && meal.tags.length}}">
+        <view class="st">标签</view>
+        <view class="sv">{{tagsText}}</view>
+      </view>
+
+      <view class="section" wx:if="{{meal.ingredients && meal.ingredients.length}}">
+        <view class="st">食材</view>
+        <view class="sv" wx:for="{{meal.ingredients}}" wx:key="name">- {{item.name}} {{item.amount}}</view>
+      </view>
+
+      <view class="section" wx:if="{{meal.steps && meal.steps.length}}">
+        <view class="st">步骤</view>
+        <view class="sv" wx:for="{{meal.steps}}" wx:key="*this">{{index+1}}. {{item}}</view>
+      </view>
+
+      <view class="actions">
+        <button class="btn ghost" bindtap="goEdit">编辑</button>
+        <button class="btn danger" bindtap="onDelete" loading="{{deleting}}">删除</button>
+      </view>
+    </view>
+
+    <view wx:else class="empty">未找到菜品</view>
+  </view>
+</view>
